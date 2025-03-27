@@ -25,6 +25,8 @@ jobs:
           validate-wrappers: 'true'
           gradle-version: 'wrapper'
       - name: Build
-        run: ./gradlew build
+        run: gradle build
       - name: Test
-        run: ./gradlew test
+        run: gradle test
+      - name: Publish
+        run: gradle jib --image=ghcr.io/phyrone/${{ github.repository }}:${{ github.sha }}
