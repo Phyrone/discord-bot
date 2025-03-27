@@ -4,6 +4,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,7 +31,4 @@ jobs:
       - name: Test
         run: gradle test
       - name: Publish
-        run: gradle jib --image=ghcr.io/phyrone/discord-bot:${{ github.ref_name }}
-      - name: Publish (latest)
-        if: github.ref == 'refs/heads/main'
-        run: gradle jib --image=ghcr.io/phyrone/discord-bot:latest
+        run: gradle jib --image=ghcr.io/${{ github.repository }}:${{ github.ref_name }}
