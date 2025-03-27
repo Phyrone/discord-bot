@@ -15,5 +15,5 @@ jobs:
         with:
           delete-untagged: true
           delete-ghost-images: true
-          older-than: 1y
+          older-than: 1 years
           exclude-tags: "latest,stable"
