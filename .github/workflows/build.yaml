@@ -32,3 +32,6 @@ jobs:
         run: gradle test
       - name: Publish
         run: gradle jib --image=ghcr.io/$(echo 'console.log("${{ github.repository }}".toLowerCase())' | node -):${{ github.ref_name }}
+      - name: Publish (latest)
+        if: github.ref == 'refs/heads/main'
+        run: gradle jib --image=ghcr.io/$(echo 'console.log("${{ github.repository }}".toLowerCase())' | node -):latest
