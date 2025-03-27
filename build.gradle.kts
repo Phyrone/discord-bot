@@ -1,3 +1,5 @@
+import com.google.cloud.tools.jib.gradle.JibTask
+
 plugins {
     kotlin("jvm") version libs.versions.kotlin
     id("com.google.cloud.tools.jib") version "3.4.5"
@@ -21,6 +23,12 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+tasks {
+
+    withType<JibTask>().configureEach {
+        notCompatibleWithConfigurationCache("because https://github.com/GoogleContainerTools/jib/issues/3132")
+    }
+}
 tasks.test {
     useJUnitPlatform()
 }

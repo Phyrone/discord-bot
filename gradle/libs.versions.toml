@@ -1,6 +1,5 @@
 [versions]
 kotlin = "2.1.10"
-
 graalvm-polglot = "24.2.0"
 
 [libraries]
