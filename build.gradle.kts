@@ -51,11 +51,4 @@ jib {
             "org.opencontainers.image.licenses" to "EUPL-1.2"
         )
     }
-    to {
-        this.image = "ghcr.io/phyrone/discord-bot"
-        this.setTags(buildList {
-            add("latest")
-            (project.version as? String)?.let { add(it) }
-        })
-    }
 }

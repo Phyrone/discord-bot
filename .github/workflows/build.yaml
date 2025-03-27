@@ -29,4 +29,4 @@ jobs:
       - name: Test
         run: gradle test
       - name: Publish
-        run: gradle jib --image=ghcr.io/phyrone/${{ github.repository }}:${{ github.sha }}
+        run: gradle jib --image=ghcr.io/phyrone/${{ github.repository }}:${{ github.ref_name }}
