@@ -1,0 +1,22 @@
+[versions]
+kotlin = "2.1.10"
+
+graalvm-polglot = "24.2.0"
+
+[libraries]
+
+graalvm-polyglot = { module = "org.graalvm.polyglot:polyglot", version.ref = "graalvm-polglot" }
+graalvm-js = { module = "org.graalvm.polyglot:js", version.ref = "graalvm-polglot" }
+graalvm-python = { module = "org.graalvm.polyglot:python", version.ref = "graalvm-polglot" }
+graalvm-java = { module = "org.graalvm.polyglot:java", version.ref = "graalvm-polglot" }
+graalvm-wasm = { module = "org.graalvm.polyglot:wasm", version.ref = "graalvm-polglot" }
+
+
+[bundles]
+graalvm = [
+    "graalvm-polyglot",
+    "graalvm-js",
+    "graalvm-python",
+    "graalvm-java",
+    "graalvm-wasm"
+]
