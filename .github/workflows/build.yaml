@@ -29,4 +29,7 @@ jobs:
       - name: Test
         run: gradle test
       - name: Publish
-        run: gradle jib --image=ghcr.io/phyrone/${{ github.repository }}:${{ github.ref_name }}
+        run: gradle jib --image=ghcr.io/phyrone/discord-bot:${{ github.ref_name }}
+      - name: Publish (latest)
+        if: github.ref == 'refs/heads/main'
+        run: gradle jib --image=ghcr.io/phyrone/discord-bot:latest
