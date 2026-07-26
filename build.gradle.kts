@@ -2,7 +2,7 @@ import com.google.cloud.tools.jib.gradle.JibTask
 
 plugins {
     kotlin("jvm") version libs.versions.kotlin
-    id("com.google.cloud.tools.jib") version "3.4.5"
+    id("com.google.cloud.tools.jib") version "3.5.4"
 }
 
 group = "de.phyrone"
